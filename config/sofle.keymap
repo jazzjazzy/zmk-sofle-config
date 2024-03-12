@@ -16,22 +16,32 @@
 #define ADJUST 3
 
 / {
+    behaviors {
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LSHIFT>, <&kp CAPSLOCK>;
+        };
+    };
+
+/ {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "default";
 // ------------------------------------------------------------------------------------------------------------
-// |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
-// |  ESC  |  Q  |  W  |  F   |  P   |  G   |                   |  J   |  L    |  U    |  Y   |  DEL  | BKSPC |
+// |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   | BKSPC |
+// |  ESC  |  Q  |  W  |  F   |  P   |  G   |                   |  J   |  L    |  U    |  Y   |   ;   |  DEL  |
 // |  TAB  |  A  |  R  |  S   |  T   |  D   |                   |  H   |  N    |  E    |  I   |   O   |   '   |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  K   |  M    |  ,    |  .   |   /   | SHIFT |
 //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
             bindings = <
-&kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &none
-&kp ESC   &kp Q  &kp W    &kp F    &kp P     &kp G                            &kp J  &kp L     &kp U     &kp Y    &kp DEL  &kp BSPC
+&kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp BSPC
+&kp ESC   &kp Q  &kp W    &kp F    &kp P     &kp G                            &kp J  &kp L     &kp U     &kp Y    &kp SEMI &kp DEL
 &kp TAB   &kp A  &kp R    &kp S    &kp T     &kp D                            &kp H  &kp J     &kp K     &kp I    &kp O    &kp SQT
-&kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &none      &kp K  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+&&kp td0  &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &none      &kp K  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp td0
                  &kp LGUI &kp LALT &kp LCTRL &mo LOWER  &kp RET    &kp SPACE  &mo RAISE  &kp RCTRL &kp RALT  &kp RGUI
             >;
 
