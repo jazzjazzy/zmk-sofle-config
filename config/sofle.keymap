@@ -21,7 +21,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LSHIFT>, <&kp CAPSLOCK>;
+            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
         };
     };
 
@@ -86,3 +86,4 @@
             sensor-bindings = <&inc_dec_kp LC(Z) LC(Y) &inc_dec_kp LEFT RIGHT>;
         };
     };
+};
