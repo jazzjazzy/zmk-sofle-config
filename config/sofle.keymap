@@ -35,6 +35,7 @@
             >;
 
                 sensor-bindings = <&inc_dec_kp LC(Z) LC(Y) &inc_dec_kp LEFT RIGHT>;
+        };
 
         lower_layer {
             display-name = "lower";
