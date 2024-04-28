@@ -15,6 +15,11 @@
 #define RAISE 2
 #define ADJUST 3
 
+DEVICE_AND_API_INIT(ssd1306, DT_INST_LABEL(0), ssd1306_init,
+            &ssd1306_driver, NULL,
+            POST_KERNEL, DISPLAY_INIT_PRIORITY,
+            &ssd1306_driver_api);
+
 / {
     // Activate ADJUST layer by pressing raise and lower
 
