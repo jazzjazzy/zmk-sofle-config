@@ -26,6 +26,13 @@
         };
     };
 
+    core_power_domain: core_power_domain {
+		compatible = "power-domain-gpio";
+		off-on-delay-us = <50000>;
+		enable-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+		zephyr,pm-device-runtime-auto;
+	};
+
     keymap {
         compatible = "zmk,keymap";
 
