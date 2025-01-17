@@ -18,7 +18,7 @@
 #
 ---
 include:
-  - board: nice_nano_v2
+  - board: helios
     shield: sofle_left
-  - board: nice_nano_v2
+  - board: helios
     shield: sofle_right
